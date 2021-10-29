@@ -3,6 +3,7 @@ import Collections from '../../src/types/Collection'
 import fetchCollection from '../../src/fetchers'
 import ApplicationSection from '../../src/components/application/Section'
 import Main from '../../src/components/layout/Main'
+import SideMenu from '../../src/components/layout/SideMenu'
 import { APPS_IN_PREVIEW_COUNT } from '../../src/env'
 import { NextSeo } from 'next-seo'
 
@@ -18,6 +19,7 @@ export default function Apps({
         title='Applications'
         description='An app store and build service for Linux'
       />
+      <SideMenu></SideMenu>
       <div className='applications-collection main-container'>
         <div className='collection'>
           <ApplicationSection
