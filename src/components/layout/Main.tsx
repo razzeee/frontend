@@ -1,12 +1,11 @@
 import { FunctionComponent } from 'react'
 
 import { MatomoProvider, createInstance } from '@datapunt/matomo-tracker-react'
-import { MATOMO_WEBSITE_ID } from '../../env'
 import PageContent from './PageContent'
 
 const instance = createInstance({
-  urlBase: process.env.BASE_URI ?? 'https://www.flathub.org',
-  siteId: MATOMO_WEBSITE_ID,
+  urlBase: process.env.NEXT_PUBLIC_SITE_BASE_URI,
+  siteId: Number(process.env.NEXT_PUBLIC_MATOMO_WEBSITE_ID) || 38,
   trackerUrl: 'https://webstats.gnome.org/matomo.php',
   srcUrl: 'https://webstats.gnome.org/matomo.js',
 })
