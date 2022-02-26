@@ -1,3 +1,4 @@
+import { useTranslation } from 'next-i18next'
 import { FunctionComponent } from 'react'
 import { useUserContext } from '../../context/user-info'
 import LogoutButton from '../login/LogoutButton'
@@ -5,6 +6,7 @@ import styles from './Details.module.scss'
 
 const UserDetails: FunctionComponent = () => {
   const user = useUserContext()
+  const { t } = useTranslation();
 
   // Nothing to show if not logged in
   if (!user.info) {
@@ -24,14 +26,14 @@ const UserDetails: FunctionComponent = () => {
         <img
           src={github_avatar}
           className={styles.avatar}
-          alt={`${github_login}'s avatar`}
+          alt={t('user-avatar', { user: github_login })}
         />
         <div className={styles.textDetails}>
           <h2>{displayname}</h2>
-          <p>GitHub Account: <a href={`https://github.com/${github_login}`}
+          <p>{t('github-account')}: <a href={`https://github.com/${github_login}`}
             target='_blank'
             rel='noreferrer'
-            title='Open in new tab'>@{github_login}</a></p>
+            title={t('open-in-new-tab')}>@{github_login}</a></p>
         </div>
         <div className='actions'>
           <LogoutButton />

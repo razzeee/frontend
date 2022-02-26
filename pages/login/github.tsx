@@ -1,3 +1,4 @@
+import { useTranslation } from 'next-i18next';
 import { NextSeo } from 'next-seo';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
@@ -8,6 +9,7 @@ import { login } from '../../src/context/actions';
 import { useUserContext, useUserDispatch } from '../../src/context/user-info';
 
 export default function AuthReturnPage() {
+  const { t } = useTranslation();
   // Must access query params to POST to backend for verification with GitHub
   const router = useRouter()
 
@@ -42,7 +44,7 @@ export default function AuthReturnPage() {
 
   return (
     <Main>
-      <NextSeo title='Login' noindex={true}></NextSeo>
+      <NextSeo title={t('login')} noindex={true}></NextSeo>
       {user.loading ? <Spinner size={200} /> : <></>}
       {error ? <FeedbackMessage success={false} message={error} /> : <></>}
     </Main>

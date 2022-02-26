@@ -1,3 +1,6 @@
+import { GetStaticProps } from 'next'
+import { useTranslation } from 'next-i18next'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { NextSeo } from 'next-seo'
 import Router from 'next/router'
 import { ReactElement, useEffect } from 'react'
@@ -9,6 +12,7 @@ import { useUserContext } from '../src/context/user-info'
 import styles from './userpage.module.scss'
 
 export default function Userpage() {
+  const { t } = useTranslation()
   const user = useUserContext()
 
   // Nothing to show if not logged in, return to home
@@ -32,8 +36,17 @@ export default function Userpage() {
 
   return (
     <Main>
-      <NextSeo title='User page' noindex={true} />
+      <NextSeo title={t('user-page')} noindex={true} />
       {content}
     </Main>
   )
 }
+
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common'])),
+    },
+  }
+}
+
