@@ -112,5 +112,11 @@
     "frequently-asked-questions": "Häufig gestellte Fragen",
     "manual-install-instructions": "Vor der Installation, stelle sicher, dass du die <2>Anleitung zum Setup</2> gelesen hast",
     "popular-apps": "Beliebte Apps",
-    "recently-updated-apps": "Kürzlich aktualisierte Apps"
+    "recently-updated-apps": "Kürzlich aktualisierte Apps",
+    "by": "von {{developer}}",
+    "install": "Installieren",
+    "screenshot": "Screenshot",
+    "donate": "Spenden",
+    "other-apps-by-developer": "Weitere Apps von {{developer}}",
+    "loading": "Laden..."
 }

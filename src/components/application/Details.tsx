@@ -2,7 +2,7 @@ import { useMatomo } from '@datapunt/matomo-tracker-react'
 import { FunctionComponent, useState } from 'react'
 import { Carousel } from 'react-responsive-carousel'
 import { Appstream, pickScreenshot } from '../../types/Appstream'
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from 'next-export-i18n';
 
 import { Summary } from '../../types/Summary'
 

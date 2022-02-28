@@ -1,5 +1,5 @@
 import { useMatomo } from '@datapunt/matomo-tracker-react'
-import { Trans, useTranslation } from 'next-i18next'
+import { Trans, useTranslation } from 'next-export-i18n'
 import { useTheme } from 'next-themes'
 import styles from './CmdInstructions.module.scss'
 import CodeCopy from './CodeCopy'

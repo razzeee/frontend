@@ -6,7 +6,7 @@ import { MdMenu, MdMenuOpen, MdSearch } from 'react-icons/md'
 import styles from './Header.module.scss'
 import { LogoJsonLd, SiteLinksSearchBoxJsonLd } from 'next-seo'
 import { env } from 'process'
-import { useTranslation } from 'next-i18next'
+import { useTranslation } from 'next-export-i18n'
 
 const Header = () => {
   const { t } = useTranslation();

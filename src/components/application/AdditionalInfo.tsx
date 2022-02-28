@@ -16,7 +16,7 @@ import { BsHddFill, BsTextParagraph } from 'react-icons/bs'
 import { MdLaptop } from 'react-icons/md'
 import { AppStats } from '../../types/AppStats'
 import spdxLicenseList from 'spdx-license-list/full'
-import { useTranslation } from 'next-i18next'
+import { useTranslation } from 'next-export-i18n'
 import { TFunction } from 'react-i18next'
 
 const AdditionalInfo = ({

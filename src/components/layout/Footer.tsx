@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import styles from './Footer.module.scss'
 import LoginStatus from '../login/Status'
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from 'next-export-i18n';
 
 const Footer = () => {
   const { t } = useTranslation();

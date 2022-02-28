@@ -1,4 +1,4 @@
-import { useTranslation } from 'next-i18next'
+import { useTranslation } from 'next-export-i18n'
 import { FunctionComponent, useEffect, useState } from 'react'
 import { CopyToClipboard } from 'react-copy-to-clipboard'
 import { MdCheck, MdContentCopy } from 'react-icons/md'

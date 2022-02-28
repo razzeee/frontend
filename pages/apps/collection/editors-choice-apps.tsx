@@ -1,6 +1,5 @@
 import { GetStaticProps } from 'next'
-import { useTranslation } from 'next-i18next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-export-i18n';
 import { NextSeo } from 'next-seo'
 import ApplicationCollection from '../../../src/components/application/Collection'
 import Main from '../../../src/components/layout/Main'
@@ -22,14 +21,13 @@ export default function EditorChoiceApps({ applications }) {
   )
 }
 
-export const getStaticProps: GetStaticProps = async ({ locale }) => {
+export const getStaticProps: GetStaticProps = async () => {
   const applications: Appstream[] = await fetchCollection(
     Collections.editorsApps
   )
 
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['common'])),
       applications,
     },
   }

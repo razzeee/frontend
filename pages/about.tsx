@@ -1,6 +1,4 @@
-import { GetStaticProps } from 'next'
-import { Trans, useTranslation } from 'next-i18next'
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import { Trans, useTranslation } from 'next-export-i18n'
 import { NextSeo } from 'next-seo'
 import Main from '../src/components/layout/Main'
 import styles from './about.module.scss'
@@ -131,14 +129,6 @@ const About = () => {
       </div >
     </Main >
   )
-}
-
-export const getStaticProps: GetStaticProps = async ({ locale }) => {
-  return {
-    props: {
-      ...(await serverSideTranslations(locale, ['common'])),
-    },
-  }
 }
 
 

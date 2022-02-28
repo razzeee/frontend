@@ -16,7 +16,7 @@ import {
   MdFormatListNumbered,
 } from 'react-icons/md'
 import ListBox from '../src/components/application/ListBox'
-import { i18n, useTranslation } from 'next-i18next';
+import { i18n, useTranslation } from 'next-export-i18n';
 
 const Statistics = ({ stats }: { stats: Statistics }): JSX.Element => {
   const { t } = useTranslation()
@@ -108,7 +108,7 @@ const Statistics = ({ stats }: { stats: Statistics }): JSX.Element => {
   )
 }
 
-export const getStaticProps: GetStaticProps = async ({ locale }) => {
+export const getStaticProps: GetStaticProps = async () => {
   console.log('Fetching data for stats')
   const stats = await fetchStats()
 

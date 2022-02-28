@@ -1,5 +1,5 @@
 import { formatDistance } from 'date-fns'
-import { useTranslation } from 'next-i18next'
+import { useTranslation } from 'next-export-i18n'
 import { FunctionComponent } from 'react'
 import { getLocale } from '../../localize'
 

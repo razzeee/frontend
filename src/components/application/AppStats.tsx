@@ -6,7 +6,7 @@ import { AppStats as AppStatistics, AppStats } from '../../types/AppStats'
 import 'chartjs-adapter-date-fns'
 
 import styles from './AppStats.module.scss'
-import { i18n, useTranslation } from 'next-i18next'
+import { i18n, useTranslation } from 'next-export-i18n'
 
 interface Props {
   stats: AppStats

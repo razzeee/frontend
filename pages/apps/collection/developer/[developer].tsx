@@ -1,5 +1,5 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from 'next-export-i18n';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { NextSeo } from 'next-seo'
 import ApplicationCollection from '../../../../src/components/application/Collection'

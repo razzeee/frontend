@@ -1,4 +1,4 @@
-import { useTranslation } from 'next-i18next'
+import { useTranslation } from 'next-export-i18n'
 import { FunctionComponent, useEffect, useState } from 'react'
 import { logout } from '../../context/actions'
 import { useUserDispatch } from '../../context/user-info'

@@ -1,6 +1,4 @@
-import { GetStaticProps } from "next"
 import { Trans, useTranslation } from "next-i18next"
-import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import { NextSeo } from "next-seo"
 import Main from "../src/components/layout/Main"
 
@@ -22,13 +20,4 @@ export default function Custom500() {
             </div>
         </Main>
     )
-}
-
-
-export const getStaticProps: GetStaticProps = async ({ locale }) => {
-    return {
-        props: {
-            ...(await serverSideTranslations(locale, ['common'])),
-        },
-    }
 }

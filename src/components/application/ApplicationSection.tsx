@@ -6,7 +6,7 @@ import { Appstream } from '../../types/Appstream'
 import ApplicationCard from './ApplicationCard'
 import styles from './ApplicationSection.module.scss'
 import Button from '../Button'
-import { useTranslation } from 'next-i18next'
+import { useTranslation } from 'next-export-i18n'
 
 interface Props {
   href: string

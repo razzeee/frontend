@@ -6,7 +6,6 @@ import type { AppProps } from 'next/app'
 import 'react-responsive-carousel/lib/styles/carousel.min.css' // Requires a loader
 import { UserInfoProvider } from '../src/context/user-info'
 import { IMAGE_BASE_URL, IS_PRODUCTION } from '../src/env'
-import { appWithTranslation } from 'next-i18next';
 
 import '../styles/main.scss'
 import { useRouter } from 'next/router'
@@ -51,4 +50,4 @@ const App = ({ Component, pageProps }: AppProps) => {
   )
 }
 
-export default appWithTranslation(App)
+export default App

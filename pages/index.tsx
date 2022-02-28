@@ -1,5 +1,4 @@
 import { GetStaticProps } from 'next'
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import Main from '../src/components/layout/Main'
 
@@ -9,7 +8,7 @@ import { NextSeo } from 'next-seo'
 import { Collections } from '../src/types/Collection'
 import ApplicationSections from '../src/components/application/Sections'
 import Button from '../src/components/Button'
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from 'next-export-i18n';
 
 export default function Home({
   recentlyUpdated,
@@ -52,7 +51,7 @@ export default function Home({
   )
 }
 
-export const getStaticProps: GetStaticProps = async ({ locale }) => {
+export const getStaticProps: GetStaticProps = async () => {
   const recentlyUpdated = await fetchCollection(
     Collections.recentlyUpdated,
     APPS_IN_PREVIEW_COUNT
@@ -72,7 +71,6 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
 
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['common'])),
       recentlyUpdated,
       editorsChoiceApps,
       editorsChoiceGames,

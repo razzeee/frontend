@@ -1,11 +1,8 @@
 import Main from '../src/components/layout/Main'
-import Link from 'next/link'
 import { FEED_NEW_URL, FEED_RECENTLY_UPDATED_URL } from '../src/env'
 import { NextSeo } from 'next-seo'
 import Button from '../src/components/Button'
-import { Trans, useTranslation } from 'next-i18next'
-import { GetStaticProps } from 'next'
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import { Trans, useTranslation } from 'next-export-i18n'
 
 const Feeds = (): JSX.Element => {
   const { t } = useTranslation()
@@ -58,14 +55,6 @@ const Feeds = (): JSX.Element => {
       </div>
     </Main>
   )
-}
-
-export const getStaticProps: GetStaticProps = async ({ locale }) => {
-  return {
-    props: {
-      ...(await serverSideTranslations(locale, ['common'])),
-    },
-  }
 }
 
 export default Feeds

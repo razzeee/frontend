@@ -6,7 +6,7 @@ import { Appstream } from '../../types/Appstream'
 import ApplicationCard from './ApplicationCard'
 import Pagination from '../Pagination'
 import styles from './Collection.module.scss'
-import { useTranslation } from 'next-i18next'
+import { useTranslation } from 'next-export-i18n'
 
 interface Props {
   applications: Appstream[]

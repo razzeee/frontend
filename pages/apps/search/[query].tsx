@@ -1,5 +1,4 @@
-import { useTranslation } from 'next-i18next'
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import { useTranslation } from 'next-export-i18n'
 import { NextSeo } from 'next-seo'
 import { useRouter } from 'next/router'
 import Collection from '../../../src/components/application/Collection'
@@ -25,12 +24,4 @@ export default function Search() {
       )}
     </Main>
   )
-}
-
-export async function getServerSideProps({ locale }) {
-  return {
-    props: {
-      ...(await serverSideTranslations(locale, ['common'])),
-    },
-  }
 }

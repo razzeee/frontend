@@ -1,5 +1,4 @@
 import { GetStaticProps } from 'next'
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { Appstream } from '../../src/types/Appstream'
 import { fetchCategory } from '../../src/fetchers'
 import Main from '../../src/components/layout/Main'
@@ -10,7 +9,7 @@ import Tile from '../../src/components/Tile'
 import { Category, categoryToName } from '../../src/types/Category'
 import styles from './index.module.scss'
 import ApplicationSection from '../../src/components/application/ApplicationSection'
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from 'next-export-i18n';
 
 export default function Apps({
   topAppsByCategory,
@@ -45,7 +44,7 @@ export default function Apps({
   )
 }
 
-export const getStaticProps: GetStaticProps = async ({ locale }) => {
+export const getStaticProps: GetStaticProps = async () => {
   let topAppsByCategory: { category: string, apps: Appstream[] }[] = [];
 
   const categoryPromise = Object.keys(Category).map(async (category: Category) => {
@@ -55,7 +54,6 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
   topAppsByCategory = await Promise.all(categoryPromise);
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['common'])),
       topAppsByCategory,
     },
   }

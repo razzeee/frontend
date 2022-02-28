@@ -1,5 +1,4 @@
 import { GetStaticProps } from 'next'
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { NextSeo } from 'next-seo'
 import Main from '../../src/components/layout/Main'
 import Router from 'next/router'
@@ -8,7 +7,7 @@ import LoginProviders from '../../src/components/login/Providers'
 import { useUserContext } from '../../src/context/user-info'
 import { fetchLoginProviders } from '../../src/fetchers'
 import { LoginProvider } from '../../src/types/Login'
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from 'next-export-i18n';
 
 export default function DeveloperLoginPortal({ providers }) {
   const { t } = useTranslation()
@@ -30,14 +29,13 @@ export default function DeveloperLoginPortal({ providers }) {
 }
 
 // Providers won't change often so fetch at build time for now
-export const getStaticProps: GetStaticProps = async ({ locale }) => {
+export const getStaticProps: GetStaticProps = async () => {
   const providers: LoginProvider[] = await fetchLoginProviders()
 
   // If request failed at build time, this page becomes a 404
   return {
     notFound: !providers,
     props: {
-      ...(await serverSideTranslations(locale, ['common'])),
       providers,
     }
   }

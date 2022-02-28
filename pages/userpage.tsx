@@ -1,6 +1,4 @@
-import { GetStaticProps } from 'next'
-import { useTranslation } from 'next-i18next'
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import { useTranslation } from 'next-export-i18n'
 import { NextSeo } from 'next-seo'
 import Router from 'next/router'
 import { ReactElement, useEffect } from 'react'
@@ -41,12 +39,3 @@ export default function Userpage() {
     </Main>
   )
 }
-
-export const getStaticProps: GetStaticProps = async ({ locale }) => {
-  return {
-    props: {
-      ...(await serverSideTranslations(locale, ['common'])),
-    },
-  }
-}
-

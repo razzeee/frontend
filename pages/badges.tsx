@@ -6,9 +6,7 @@ import styles from './badges.module.scss'
 import flathubBadge from '/public/assets/badges/flathub-badge-en.png'
 import flathubBadgeInverted from '/public/assets/badges/flathub-badge-i-en.png'
 import cc0 from '/public/img/CC0.png'
-import { GetStaticProps } from 'next'
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import { Trans, useTranslation } from 'next-i18next'
+import { Trans, useTranslation } from 'next-export-i18n'
 
 const badgeExampleCode =
   "<a href='https://flathub.org/apps/details/org.gimp.GIMP'><img width='240' alt='Download on Flathub' src='https://flathub.org/assets/badges/flathub-badge-en.png'/></a>"
@@ -124,14 +122,6 @@ const Badges = () => {
       </section>
     </Main>
   )
-}
-
-export const getStaticProps: GetStaticProps = async ({ locale }) => {
-  return {
-    props: {
-      ...(await serverSideTranslations(locale, ['common'])),
-    },
-  }
 }
 
 

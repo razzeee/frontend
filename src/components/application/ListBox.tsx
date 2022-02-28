@@ -1,5 +1,5 @@
 import { useMatomo } from '@datapunt/matomo-tracker-react'
-import { useTranslation } from 'next-i18next'
+import { useTranslation } from 'next-export-i18n'
 import { FunctionComponent } from 'react'
 import { MdOpenInNew } from 'react-icons/md'
 import styles from './ListBox.module.scss'

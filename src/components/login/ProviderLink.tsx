@@ -1,4 +1,4 @@
-import { useTranslation } from 'next-i18next'
+import { useTranslation } from 'next-export-i18n'
 import { FunctionComponent, useState, useEffect } from 'react'
 import { LoginProvider, LoginRedirect } from '../../types/Login'
 import FeedbackMessage from '../FeedbackMessage'

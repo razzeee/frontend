@@ -1,4 +1,4 @@
-import { useTranslation } from 'next-i18next'
+import { useTranslation } from 'next-export-i18n'
 import Link from 'next/link'
 import { FunctionComponent, ReactElement } from 'react'
 import { useUserContext } from '../../context/user-info'

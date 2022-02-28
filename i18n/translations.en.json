@@ -112,5 +112,11 @@
     "frequently-asked-questions": "Frequently Asked Questions",
     "manual-install-instructions": "Make sure to follow the <2>setup guide</2> before installing",
     "popular-apps": "Popular Apps",
-    "recently-updated-apps": "Recently updated apps"
+    "recently-updated-apps": "Recently updated apps",
+    "by": "by {{developer}}",
+    "install": "Install",
+    "screenshot": "Screenshot",
+    "donate": "Donate",
+    "other-apps-by-developer": "Other apps by {{developer}}",
+    "loading": "Loading..."
 }
